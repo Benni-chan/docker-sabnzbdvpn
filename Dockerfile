@@ -27,6 +27,7 @@ RUN echo "deb http://deb.debian.org/debian/ buster non-free" > /etc/apt/sources.
     && rm /opt/${SABNZBD_NAME} \
     && mv SABnzbd* SABnzbd \
     && cd /opt/SABnzbd \
+    && python 3 -m pip install --upgrade pip \
     && python3 -m pip install wheel -U \
     && python3 -m pip install -r requirements.txt -U \
     && apt-get clean \
